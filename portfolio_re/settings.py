@@ -44,14 +44,14 @@ else:
     DEBUG = False
 
 ALLOWED_HOSTS = [
-    "web-42y52ttcgi0o.up-de-fra1-k8s-1.apps.run-on-seenode.com",
+    "portfolio-django-lfq5.onrender.com",
     "127.0.0.1",
     "localhost",
 ]
 
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://web-42y52ttcgi0o.up-de-fra1-k8s-1.apps.run-on-seenode.com",
+    "https://portfolio-django-lfq5.onrender.com",
 ]
 
 INTERNAL_IPS = (

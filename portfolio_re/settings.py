@@ -70,8 +70,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "ckeditor",
-    "ckeditor_uploader",
+    "django_ckeditor_5",
 
 ]
 
@@ -126,21 +125,27 @@ WSGI_APPLICATION = "portfolio_re.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'projects_portfolio_bd',
-        'USER': 'code2025',
-        'PASSWORD': '12AtmosR',
-        'HOST': 'localhost',
-    }
-}
+POSTGRES_LOCALLY = False  # Keep this False for production
 
-POSTGRES_LOCALLY = False
-if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
-    # Use the DATABASE_URL environment variable for production
-    # This is typically set in your hosting environment (e.g., Heroku, AWS, etc.)
-    DATABASES['default'] = dj_database_url.parse(env('DATABASE_URL'))
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(env('DATABASE_URL'))
+    }
+else:
+    # Fallback to local settings if DATABASE_URL is not found (e.g., development)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'projects_portfolio_bd',
+            'USER': 'code2025',
+            'PASSWORD': '12AtmosR',
+            'HOST': 'localhost',
+        }
+    }
+
+print("DATABASES:", DATABASES)
+print("SECRET_KEY:", env("SECRET_KEY"))
+print("DATABASE_URL:", env("DATABASE_URL"))
 
     # Use the DATABASE_URL environment variable for production
     # This is typically set in your hosting environment (e.g., Heroku, AWS, etc.)

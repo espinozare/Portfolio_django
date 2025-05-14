@@ -1,0 +1,24 @@
+{
+  "name": "portfolio_taildwincss_django",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i portfolio_re/static/src/styles.css -o portfolio_re/static/dist/styles.css --watch"
+    
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.6",
+    "@tailwindcss/postcss": "^4.1.6",
+    "clean-css": "^5.3.3",
+    "clean-css-cli": "^5.6.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.6"
+  }
+}

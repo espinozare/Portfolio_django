@@ -12,6 +12,7 @@ class Project(models.Model):
     description = CKEditor5Field(config_name='default', blank=True)
     photo=models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     category = models.CharField(max_length=100)
+    is_featured = models.BooleanField(default=False)
     created_date=models.DateTimeField(default=datetime.now,blank=True)
     website_url = models.URLField(blank=True, null=True)  # New field for the project link
     github_url = models.URLField(blank=True, null=True)  # New field for the project link

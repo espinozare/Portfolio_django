@@ -44,14 +44,16 @@ else:
     DEBUG = False
 
 ALLOWED_HOSTS = [
-    "web-b4drlwy2m9ri.up-de-fra1-k8s-1.apps.run-on-seenode.com",
+    "web-5j1fy3qrjudu.up-de-fra1-k8s-1.apps.run-on-seenode.com",
+    "web-5j1fy3qrjudu.up-de-fra1-k8s-1.apps.run-on-seenode.com/admin",
     "127.0.0.1",
     "localhost",
 ]
 
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://web-b4drlwy2m9ri.up-de-fra1-k8s-1.apps.run-on-seenode.com",
+    "https://web-5j1fy3qrjudu.up-de-fra1-k8s-1.apps.run-on-seenode.com",
+    "https://web-5j1fy3qrjudu.up-de-fra1-k8s-1.apps.run-on-seenode.com/admin"
 ]
 
 INTERNAL_IPS = (

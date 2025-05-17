@@ -44,7 +44,7 @@ else:
     DEBUG = False
 
 ALLOWED_HOSTS = [
-    "https://portfolio-django-lfq5.onrender.com"
+    "portfolio-django-lfq5.onrender.com"
     "127.0.0.1",
     "localhost",
 ]

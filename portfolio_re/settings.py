@@ -46,6 +46,7 @@ else:
 ALLOWED_HOSTS = [
     "web-5j1fy3qrjudu.up-de-fra1-k8s-1.apps.run-on-seenode.com",
     "web-5j1fy3qrjudu.up-de-fra1-k8s-1.apps.run-on-seenode.com/admin",
+    "dashboard.render.com/web/srv-d0ibs1be5dus738b7hc0",
     "127.0.0.1",
     "localhost",
 ]
@@ -53,7 +54,8 @@ ALLOWED_HOSTS = [
 
 CSRF_TRUSTED_ORIGINS = [
     "https://web-5j1fy3qrjudu.up-de-fra1-k8s-1.apps.run-on-seenode.com",
-    "https://web-5j1fy3qrjudu.up-de-fra1-k8s-1.apps.run-on-seenode.com/admin"
+    "https://web-5j1fy3qrjudu.up-de-fra1-k8s-1.apps.run-on-seenode.com/admin",
+    "https://dashboard.render.com/web/srv-d0ibs1be5dus738b7hc0"
 ]
 
 INTERNAL_IPS = (
@@ -127,7 +129,7 @@ WSGI_APPLICATION = "portfolio_re.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-POSTGRES_LOCALLY = False  # Keep this False for production
+POSTGRES_LOCALLY = True  # Keep this False for production
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {

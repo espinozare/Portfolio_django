@@ -125,7 +125,7 @@ WSGI_APPLICATION = "portfolio_re.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-POSTGRES_LOCALLY = True  # Keep this False for production
+POSTGRES_LOCALLY = False 
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {

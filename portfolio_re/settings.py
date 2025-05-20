@@ -40,13 +40,13 @@ else:
     DEBUG = False
 
 ALLOWED_HOSTS = [
-    "portfolio-django-34ys.onrender.com",
+    "web-xyi2wy5a0qkj.up-de-fra1-k8s-1.apps.run-on-seenode.com",
     "127.0.0.1",
     "localhost",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://portfolio-django-34ys.onrender.com"
+    "https://web-xyi2wy5a0qkj.up-de-fra1-k8s-1.apps.run-on-seenode.com"
 ]
 
 INTERNAL_IPS = (

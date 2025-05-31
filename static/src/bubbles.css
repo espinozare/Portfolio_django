@@ -1,0 +1,35 @@
+.banner-bubbles {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Ajusta según tu banner */
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    animation: floatBubble linear forwards;
+    transform: translateY(100%);
+    opacity: 0;
+    word-break: break-word;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    z-index: 10;
+}
+
+@keyframes floatBubble {
+    0% { transform: translateY(100%); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 0.9; }
+    100% { transform: translateY(-100%); opacity: 0; }
+}

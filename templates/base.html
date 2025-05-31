@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'dist/styles.css' %}">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
  
-
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bubbles.css' %}">
     <!-- Tailwind CSS v4 Configuration -->
     <style type="text/tailwindcss">
       /* Class based dark mode */
@@ -43,8 +43,18 @@
     <style>
       [x-cloak] {
         display: none !important;
+         .banner-bubbles {
+            position: relative;
+            z-index: 10;
+        }
+        .bubble {
+            z-index: 20 !important;
+        }
+
       }
     </style>
+
+
   </head>
   <body class="antialiased">
     <!-- Page Container -->
@@ -153,8 +163,11 @@
           </div>
         </header>
         <!-- END Main Header -->
-<body class="bg-white dark:bg-gray-900 transition-colors duration-300">
-    {% include 'includes/navbar.html' %}
+<body class="antialiased bg-white dark:bg-gray-900 transition-colors duration-300">
+    <!-- Contenedor de burbujas FIJAS que cubren toda la pantalla -->
+    <div class="banner-bubbles">
+        {% include 'includes/bubbles.html' %}
+    </div>
     
     <main class="container mx-auto px-4 py-8">
         {% block content %}
@@ -162,7 +175,9 @@
     </main>
 
     {% include 'includes/footer.html' %}
-    
-   
+
+    <!-- JS para burbujas -->
+    <script src="{% static 'js/bubbles.js' %}"></script>
+
 </body>
 </html>

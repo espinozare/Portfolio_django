@@ -1,0 +1,36 @@
+/* static/css/bubbles.css */
+.banner-bubbles {
+    position: relative;
+    width: 100%;
+    height: 300px; 
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute !important;
+    border-radius: 50% !important;
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 15px !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+    cursor: pointer !important;
+    animation: floatBubble linear forwards !important;
+    transform: translateY(100%) !important;
+    opacity: 0 !important;
+    word-break: break-word !important;
+    font-family: 'Arial', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: #333 !important;
+    z-index: 50 !important;
+}
+
+@keyframes floatBubble {
+    0% { transform: translateY(100%) !important; opacity: 0 !important; }
+    10% { opacity: 1 !important; }
+    90% { opacity: 0.9 !important; }
+    100% { transform: translateY(-100%) !important; opacity: 0 !important; }
+}

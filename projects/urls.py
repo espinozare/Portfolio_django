@@ -19,4 +19,5 @@ from projects import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('cv', views.cv, name='cv'),
 ]

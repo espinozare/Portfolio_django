@@ -31,3 +31,8 @@ urlpatterns = [
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  
+# ... (tu código actual) ...
+
+if settings.DEBUG: # Asegúrate de que esto solo se ejecute en desarrollo
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # Añade esta línea para servir STATIC_URL

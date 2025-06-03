@@ -41,12 +41,14 @@ else:
 
 ALLOWED_HOSTS = [
     "web-xyi2wy5a0qkj.up-de-fra1-k8s-1.apps.run-on-seenode.com",
+    "portfolioespinozarommel.com",
     "127.0.0.1",
     "localhost",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://web-xyi2wy5a0qkj.up-de-fra1-k8s-1.apps.run-on-seenode.com"
+    "https://web-xyi2wy5a0qkj.up-de-fra1-k8s-1.apps.run-on-seenode.com",
+    "https://portfolioespinozarommel.com"
 ]
 
 INTERNAL_IPS = (
@@ -119,7 +121,7 @@ WSGI_APPLICATION = "portfolio_re.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-POSTGRES_LOCALLY = False
+POSTGRES_LOCALLY = True
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {

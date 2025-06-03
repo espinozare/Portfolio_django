@@ -1,25 +1,26 @@
 {% load static %}
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    
 
-    <title>Portfolio Rommel {% block title %}  {% endblock %}</title>
+<head>
+
+  <head>
+
+
+    <title>Portfolio Rommel {% block title %} {% endblock %}</title>
     <!-- Icons -->
-   
+
 
 
     <!-- Inter web font from bunny.net (GDPR compliant) -->
     <link rel="preconnect" href="https://fonts.bunny.net" />
-    <link
-      href="https://fonts.bunny.net/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.bunny.net/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet" />
 
     <!-- Tailwind CSS Play CDN (mostly for development/testing purposes) -->
     <link rel="stylesheet" type="text/css" href="{% static 'dist/styles.css' %}">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
- 
+
     <link rel="stylesheet" type="text/css" href="{% static 'css/bubbles.css' %}">
     <!-- Tailwind CSS v4 Configuration -->
     <style type="text/tailwindcss">
@@ -34,21 +35,20 @@
     </style>
 
     <!-- Alpine.js -->
-    <script
-      defer
-      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <!-- Alpine.js (x-cloak - https://alpinejs.dev/directives/cloak) -->
     <style>
       [x-cloak] {
         display: none !important;
-         .banner-bubbles {
-            position: relative;
-            z-index: 10;
+
+        .banner-bubbles {
+          position: relative;
+          z-index: 10;
         }
+
         .bubble {
-            z-index: 20 !important;
+          z-index: 20 !important;
         }
 
       }
@@ -56,15 +56,14 @@
 
 
   </head>
-  <body class="antialiased">
-    <!-- Page Container -->
-    <div
-      x-data="{
+</head>
+
+<body class="antialiased"> <!-- PRIMER BODY (MANTENER) -->
+  <!-- Page Container -->
+  <div x-data="{
         darkMode: false,
         toggleDarkMode() {
           this.darkMode = ! this.darkMode;
-
-          // Toggle dark class on html element
           if (this.darkMode) {
             document.body.parentNode.classList.add('dark');
           } else {
@@ -72,112 +71,74 @@
           }
         }
       }"
-      class="min-h-dvh min-w-80 bg-white text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
-    >
-      <!-- Page Content -->
-      <main
-        id="page-content"
-        class="mx-auto flex max-w-6xl flex-auto flex-col px-4 pb-4 lg:px-8 lg:pb-8"
-      >
-        <!-- Main Header -->
-        <header
-          id="page-header"
-          class="flex flex-none items-center justify-between py-7"
-        >
-          <div class="flex items-center gap-2">
-            <!-- Logo -->
-            <a
-              href="javascript:void(0)"
-              class="text-2xl font-thin tracking-widest hover:text-purple-600 active:opacity-75 dark:hover:text-purple-400"
-            >
-              Rommel
-              {% if debug %}
-              <span class=" text-yellow-400 font-ligth italic ml-1"> DEV</span>
-              {% endif %}
-            </a>
-            <!-- END Logo -->
+    class="min-h-dvh min-w-80 bg-white text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 transition-colors duration-300">
+    <!-- Page Content -->
+    <main id="page-content" class="mx-auto flex max-w-6xl flex-auto flex-col px-4 pb-4 lg:px-8 lg:pb-8">
+      <!-- Main Header -->
+      <header id="page-header" class="flex flex-none items-center justify-between py-7">
+        <div class="flex items-center gap-2">
+          <!-- Logo -->
+          <a href="javascript:void(0)"
+            class="text-2xl font-thin tracking-widest hover:text-purple-600 active:opacity-75 dark:hover:text-purple-400">
+            Rommel Portfolio
+            <span class="text-purple-600 dark:text-purple-400"></span>
 
-            <!-- Toggle Dark Mode -->
-            <button
-              x-on:click="toggleDarkMode()"
-              type="button"
-              class="relative inline-flex size-9 items-center justify-center text-zinc-600 hover:opacity-75 dark:text-zinc-400"
-            >
-              <div
-                x-cloak
-                x-show="!darkMode"
-                x-transition:enter="transition ease-out duration-150"
-                x-transition:enter-start="opacity-0 rotate-180"
-                x-transition:enter-end="opacity-100 rotate-0"
-                x-transition:leave="transition ease-in duration-100"
-                x-transition:leave-start="opacity-100 rotate-0"
-                x-transition:leave-end="opacity-0 rotate-180"
-                class="absolute inset-0 flex items-center justify-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="hi-outline hi-sun inline-block size-5"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
-                  />
-                </svg>
-              </div>
-              <div
-                x-cloak
-                x-show="darkMode"
-                x-transition:enter="transition ease-out duration-150"
-                x-transition:enter-start="opacity-0 rotate-180"
-                x-transition:enter-end="opacity-100 rotate-0"
-                x-transition:leave="transition ease-in duration-100"
-                x-transition:leave-start="opacity-100 rotate-0"
-                x-transition:leave-end="opacity-0 rotate-180"
-                class="absolute inset-0 flex items-center justify-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="hi-outline hi-moon inline-block size-5"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
-                  />
-                </svg>
-              </div>
-            </button>
-            <!-- END Toggle Dark Mode -->
-          </div>
-          <div class="flex items-center gap-4">
+          </a>
+          <!-- END Logo -->
 
-          </div>
-        </header>
-        <!-- END Main Header -->
-<body class="antialiased bg-white dark:bg-gray-900 transition-colors duration-300">
-    <!-- Contenedor de burbujas FIJAS que cubren toda la pantalla -->
-    <div class="banner-bubbles">
-        {% include 'includes/bubbles.html' %}
-    </div>
-    
-    <main class="container mx-auto px-4 py-8">
+          <!-- Toggle Dark Mode -->
+          <button x-on:click="toggleDarkMode()" type="button"
+            class="relative inline-flex size-9 items-center justify-center text-zinc-600 hover:opacity-75 dark:text-zinc-400">
+            <div x-cloak x-show="!darkMode" x-transition:enter="transition ease-out duration-150"
+              x-transition:enter-start="opacity-0 rotate-180" x-transition:enter-end="opacity-100 rotate-0"
+              x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 rotate-0"
+              x-transition:leave-end="opacity-0 rotate-180" class="absolute inset-0 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="hi-outline hi-sun inline-block size-5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+              </svg>
+            </div>
+            <div x-cloak x-show="darkMode" x-transition:enter="transition ease-out duration-150"
+              x-transition:enter-start="opacity-0 rotate-180" x-transition:enter-end="opacity-100 rotate-0"
+              x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 rotate-0"
+              x-transition:leave-end="opacity-0 rotate-180" class="absolute inset-0 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="hi-outline hi-moon inline-block size-5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+              </svg>
+            </div>
+          </button>
+          <!-- END Toggle Dark Mode -->
+        </div>
+        <div class="flex items-center gap-4">
+
+        </div>
+        {% include 'includes/navbar.html' %}
+      </header>
+      <header id="page-header" class="flex flex-none items-center justify-between py-7">
+        <!-- ... (contenido del header) ... -->
+      </header>
+      <!-- END Main Header -->
+
+      <!-- CONTENIDO PRINCIPAL (antes en el segundo body) -->
+
+      {% include 'includes/bubbles.html' %}
+
+      <main class="container mx-auto px-4 py-8">
         {% block content %}
         {% endblock %}
+      </main>
+
+      <!-- Footer -->
+      {% include 'includes/footer.html' %}
+
+      <!-- JS para burbujas -->
+      <script src="{% static 'js/bubbles.js' %}"></script>
+
     </main>
+  </div>
+</body> <!-- CIERRE DEL PRIMER BODY -->
 
-    {% include 'includes/footer.html' %}
-
-    <!-- JS para burbujas -->
-    <script src="{% static 'js/bubbles.js' %}"></script>
-
-</body>
 </html>
